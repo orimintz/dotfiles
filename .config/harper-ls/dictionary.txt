@@ -1,0 +1,8 @@
+ptr
+HardLock
+pBufferOut
+booleans
+uint64
+condVar
+TransObj
+lockless

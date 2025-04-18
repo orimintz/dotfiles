@@ -1,0 +1,58 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Ori Mintz
+	email = ori.mintz@regatta.dev
+
+[pull]
+	rebase = false
+
+[pager]
+        # Make every Git command that normally pages use delta
+        diff    = delta
+        log     = delta --line-numbers
+        reflog  = delta
+        show    = delta
+        stash   = delta
+
+[interactive]
+        # Pretty color when you run:  git add -p
+        diffFilter = "delta --color-only"
+
+[delta]                         # core styling
+	features = +side-by-side line-numbers navigate decorations
+	syntax-theme = gruvbox-dark
+	hyperlinks = true
+        whitespace-error-style = "22 reverse"
+
+        # make +/- columns easier to scan
+        plus-style     = syntax "#003800"
+        minus-style    = syntax "#3f0001"
+	line-numbers-left-style = cyan
+	line-numbers-right-style = cyan
+	commit-decoration-style = bold yellow box ul
+
+[delta "line-numbers"]          # colours for the gutters
+        line-numbers-left-style  = cyan
+        line-numbers-right-style = cyan
+        line-numbers-minus-style = 124      # red-ish
+        line-numbers-plus-style  = 28       # green-ish
+
+[delta "decorations"]           # boxes around headers, bold filenames, etc.
+        commit-decoration-style  = bold yellow box ul
+        file-style               = bold yellow ul
+        file-decoration-style    = none
+        hunk-header-decoration-style = cyan box ul
+[core]
+	pager = delta
+
+[diff]
+    tool = vimdiff
+
+[merge]
+    tool = vimdiff
+    conflictstyle = zdiff3
+
+[mergetool "vimdiff"]
+    cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED \
+          -c '$wincmd w' -c 'wincmd J'

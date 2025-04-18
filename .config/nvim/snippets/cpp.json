@@ -1,0 +1,74 @@
+{
+	"class decleration": {
+		"prefix": "class",
+		"body": [
+			"class $1{",
+			"private:",
+			"",
+			"public:",
+			"",
+			"};",
+			"using P$1 = $1 *;"
+		],
+		"description": "create class decleration"
+	},
+	"struct decleration": {
+		"prefix": "struct",
+		"body": [
+			"struct $1{",
+			"public:",
+			"",
+			"};",
+			"using P$1 = $1 *;"
+		],
+		"description": "create struct decleration"
+	},
+	"todo": {
+		"prefix": "todo",
+		"body": [
+			"// TODO: Mintz: "
+		]
+	},
+	"new uninitialized rc": {
+		"prefix": "nrc",
+		"body": [
+			"CoreRC rc{CoreRC::kUninitializedRC};"
+		]
+	},
+	"Success": {
+		"prefix": "success",
+		"body": [
+			"CoreRC::kSuccess"
+		]
+	},
+	"NoMem": {
+		"prefix": "nomem",
+		"body": [
+			"CoreRC::kNoMem"
+		]
+	},
+	"Unused": {
+		"prefix": "unused",
+		"body": [
+			"CORE__UNUSED_VAR($1);"
+		]
+	},
+	"Assert": {
+		"prefix": "core_assert",
+		"body": [
+			"CORE_ASSERT($1);"
+		]
+	},
+	"assert success": {
+		"prefix": "core_assert_success",
+		"body": [
+			"CORE_ASSERT_SUCCESS($1);"
+		]
+	},
+	"core rc": {
+		"prefix": "corerc",
+		"body": [
+			"CoreRC "
+		]
+	}
+}

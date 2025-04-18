@@ -1,0 +1,8 @@
+{
+    "name": "personal-snipptes",
+    "contributes": {
+        "snipptes" :[
+            {"language": "cpp", "path": "./cpp.json"}
+        ]
+    }
+}
