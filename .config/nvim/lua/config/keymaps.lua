@@ -41,3 +41,8 @@ require("which-key").add({ "<leader>b", group = "buffer/build" })
 vim.keymap.set("n", "<leader><delete>", function()
   Snacks.bufdelete()
 end, { desc = "Close Buffer" })
+
+vim.keymap.set("n", "<leader>gO", function()
+  local sha = vim.fn.expand("<cword>") -- SHA under cursor or whatever you yanked
+  vim.cmd("DiffviewOpen " .. sha .. "^!")
+end, { desc = "Open commit in Diffview" })

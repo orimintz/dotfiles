@@ -83,6 +83,6 @@ end
 
 return {
   "stevearc/overseer.nvim",
-  opts = { templates = { "builtin", "rdb", "compile_commands" } },
+  opts = { templates = { "builtin", "rdb", "compile_commands", "regression" } },
   keys = generate_keymaps(),
 }
