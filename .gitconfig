@@ -47,12 +47,14 @@
 	pager = delta
 
 [diff]
-    tool = vimdiff
+	tool = vimdiff
 
 [merge]
-    tool = vimdiff
+	tool = vimdiff
     conflictstyle = zdiff3
 
 [mergetool "vimdiff"]
     cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED \
           -c '$wincmd w' -c 'wincmd J'
+[mergetool "meld"]
+	trustExitCode = true

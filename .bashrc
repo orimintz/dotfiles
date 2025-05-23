@@ -184,6 +184,8 @@ source ~/git/rdb/setup_rdb_python.sh
 alias gencc='f() { ./src/scripts/gen_compile_commands.sh "${1:-Debug}"; }; f'
 alias nvim='~/Downloads/nvim-linux-x86_64/bin/nvim'
 alias lazygit='~/Downloads/lazygit'
+alias lg='~/Downloads/lazygit'
+alias cl='git clang-format'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm

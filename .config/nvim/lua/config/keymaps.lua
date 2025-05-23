@@ -46,3 +46,25 @@ vim.keymap.set("n", "<leader>gO", function()
   local sha = vim.fn.expand("<cword>") -- SHA under cursor or whatever you yanked
   vim.cmd("DiffviewOpen " .. sha .. "^!")
 end, { desc = "Open commit in Diffview" })
+
+vim.keymap.set("n", "<leader>uB", function()
+  require("gitsigns").toggle_current_line_blame()
+end, { desc = "Toggle Git Blame" })
+
+local opts = { noremap = true, silent = true, buffer = true }
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group = vim.api.nvim_create_augroup("GitMergeTool", {}),
+  pattern = "*",
+  callback = function()
+    if vim.opt.diff:get() then
+      vim.keymap.set("n", "<leader>dl", ":diffget LOCAL<CR>", vim.tbl_extend("force", opts, { desc = "diffget LOCAL" }))
+      vim.keymap.set("n", "<leader>db", ":diffget BASE<CR>", vim.tbl_extend("force", opts, { desc = "diffget BASE" }))
+      vim.keymap.set(
+        "n",
+        "<leader>dr",
+        ":diffget REMOTE<CR>",
+        vim.tbl_extend("force", opts, { desc = "diffget REMOTE" })
+      )
+    end
+  end,
+})
